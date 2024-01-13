@@ -1,14 +1,16 @@
 title: Devneios
 email: rauanpires@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Ra1's personal page
+  Personal blog
 baseurl: ""
 domain: "rauanbpk.github.io"
 url: "https://rauanbpk.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: RauanBPK
+linkedin_username: rauan-pires
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
 google_analytics: "G-WF6K6S3PFL"
+show_excerpts: false
