@@ -278,7 +278,9 @@
 }
 .post-header h1 {
   margin-bottom: 0px;
+  @include relative-font-size(2.25);
   color: #3a3a3a;
+  font-style: italic;
 }
 
 .post-header .post-categories {
@@ -294,7 +296,6 @@
     @include relative-font-size(2.25);
   }
 }
-
 
 .post-content {
   margin-bottom: $spacing-unit;
