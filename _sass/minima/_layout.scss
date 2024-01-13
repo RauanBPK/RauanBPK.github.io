@@ -15,7 +15,9 @@
 
 .site-title {
   @include relative-font-size(1.625);
-  font-weight: 300;
+  font-style: oblique;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-weight: 800;
   line-height: $base-line-height * $base-font-size * 2.25;
   letter-spacing: -1px;
   margin-bottom: 0;
@@ -23,7 +25,11 @@
 
   &,
   &:visited {
-    color: $grey-color-dark;
+    color: #add8e6;
+  }
+  &:hover {
+    color: #1756a9;
+    text-decoration: none;
   }
 }
 
@@ -40,12 +46,16 @@
   }
 
   .page-link {
-    color: $text-color;
+    color: #add8e6;
     line-height: $base-line-height;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 20px;
+    }
+    &:hover {
+      color: #1756a9;
+      text-decoration: none;
     }
   }
 
@@ -210,6 +220,7 @@
 
 .post-list-heading {
   @include relative-font-size(1.75);
+  color: #3f3f3f;
 }
 
 .post-list {
@@ -234,7 +245,7 @@
 
 .post-link:hover {
   text-decoration: none;
-  color: #009926;
+  color: #add8e6;
 }
 
 .post-categories {
@@ -267,6 +278,7 @@
 }
 .post-header h1 {
   margin-bottom: 0px;
+  color: #3a3a3a;
 }
 
 .post-header .post-categories {
@@ -309,5 +321,29 @@
     @include media-query($on-laptop) {
       @include relative-font-size(1.125);
     }
+  }
+}
+/**
+ * Posts by tag
+ */
+
+.post-by-tag {
+  code {
+    @include relative-font-size(1.5);
+    color: #1756a9;
+    font-style: italic;
+  }
+  li {
+    color: lightblue;
+  }
+  a:hover{
+      text-decoration: none;
+      color: #add8e6;
+  }
+  border-bottom: solid lightgray 1px;
+
+  h1 {
+    color: #3f3f3f;
+    font-style: italic;
   }
 }
