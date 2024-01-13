@@ -6,7 +6,7 @@ layout: default
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <div class="post-categories">
       {% for tag in page.tags %}
-        <a href="/tags/{{ tag | slugify }}/"><code>{{ tag }}</code></a>
+        <a href="/tags/{{ tag | slugify }}"><code>{{ tag }}</code></a>
       {% endfor %}
     </div>
     <p class="post-meta">
