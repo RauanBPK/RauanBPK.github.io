@@ -56,7 +56,7 @@ services:
       - "5000:5000"
 ```
 
-<small>Vou utilizar um _docker-compose.yml_ por ser útil para mapear portas e para adicionar outros serviços (ex.: bd),
+* <small>Vou utilizar um _docker-compose.yml_ por ser útil para mapear portas e para adicionar outros serviços (ex.: bd),
 como veremos adiante.</small>
 
 Bom, se tentarmos debugar utilizando o interpretador que está aí no seu _venv_ (pf esteja usando um venv), vai funcionar,
@@ -81,7 +81,7 @@ Por último, escolhemos o interpretador. _System Interpreter_ > `/usr/local/bin/
 
 <img src="/images/pycharm-docker-debug/new_interpreter-3.png" style="display:block;margin:0 auto">
 
-<small>Deixamos na opção _System Interpreter_ pois não tem necessidade de usar um venv dentro do container.</small>
+* <small>Deixamos na opção _System Interpreter_ pois não tem necessidade de usar um venv dentro do container.</small>
 
 Ok, interpretador criado!
 
@@ -171,7 +171,7 @@ Ok, agora é só rodar (clicando na setinha do lado da barata) essa nova config 
 anteriormente para então debugar nossa aplicação. 
 <small style="color: #ddd">Lembre de usar a baratinha</small>
 
-<small>A app acaba nem chamando o mongo... mas poderia.</small>
+* <small>A app acaba nem chamando o mongo... mas poderia.</small>
 
 ### F no chat: Unit test com _Pytest_
 
