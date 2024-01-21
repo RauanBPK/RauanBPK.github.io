@@ -14,7 +14,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 show_excerpts: false
-
+google_analytics: true
 defaults:
   -
     scope:
