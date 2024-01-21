@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Debugando Python dockerizado no Pycharm"
+title:  "Debugando Python dockerizado no PyCharm"
 author: Rauan
 date:   2024-01-21
 tags: tutorial debug python docker
@@ -11,7 +11,7 @@ tags: tutorial debug python docker
 Eu passei um bom tempo usando `print()` para debugar código Python que estava rodando em containers por não saber
 como usar o debugger de maneira adequada (dã). Acho que descobri.
 
-Como eu utilizo o <a href="https://www.jetbrains.com/pycharm/" target="_blank">Pycharm</a> (e talvez você devesse também),
+Como eu utilizo o <a href="https://www.jetbrains.com/pycharm/" target="_blank">PyCharm</a> (e talvez você devesse também),
 esse tutorial não cobre <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> ou
 <a href="https://docs.python.org/3/library/pdb.html" target="_blank">pdb</a> puro.
 
