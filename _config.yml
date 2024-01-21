@@ -15,6 +15,7 @@ plugins:
   - jekyll-seo-tag
 show_excerpts: false
 google_analytics: true
+permalink: /:title/
 defaults:
   -
     scope:
