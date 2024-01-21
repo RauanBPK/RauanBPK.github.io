@@ -145,7 +145,7 @@ services:
 ```
 
 Nesse caso, se seguirmos os passos da seção anterior, nosso banco de dados nunca será executado, pois o interpretador configurado só
-diz respeito à aplicação em si (_app_), e a configuração de _run/debug_ também, apenas executa nosso programa a partir de um
+diz respeito à aplicação em si (_app_), e a configuração de _run/debug_ também, e apenas executa nosso programa a partir de um
 _entrypoint_ pré-estabelecido (_main.py_).
 
 Criaremos então outra configuração de _run/debug_. Assim como antes, abra a aba de _run/debug_, e dessa vez,
