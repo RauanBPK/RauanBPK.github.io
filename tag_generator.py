@@ -44,7 +44,7 @@ for filename in filenames:
     f.close()
 total_tags = set(total_tags)
 
-old_tags = glob.glob(tag_dir + '*.md')
+old_tags = glob.glob(tag_dir + '*.markdown')
 for tag in old_tags:
     os.remove(tag)
 
@@ -52,7 +52,7 @@ if not os.path.exists(tag_dir):
     os.makedirs(tag_dir)
 
 for tag in total_tags:
-    tag_filename = tag_dir + tag.replace(' ', '_') + '.md'
+    tag_filename = tag_dir + tag.replace(' ', '_') + '.markdown'
     f = open(tag_filename, 'a')
     write_str = '---\nlayout: tagpage\ntitle: \"Tag: ' + tag + '\"\ntag: ' + tag + '\nrobots: noindex\n---\n'
     f.write(write_str)
