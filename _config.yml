@@ -15,3 +15,11 @@ plugins:
   - jekyll-seo-tag
 google_analytics: "G-WF6K6S3PFL"
 show_excerpts: false
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      allow_comments: true

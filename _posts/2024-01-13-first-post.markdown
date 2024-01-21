@@ -4,6 +4,7 @@ title:  "cd ~/Devneios && ./configure"
 author: Rauan
 date:   2024-01-13
 tags: misc
+allow_comments: false
 ---
 
 Oi, ainda não tem nada por aqui. `;-;`<br>
