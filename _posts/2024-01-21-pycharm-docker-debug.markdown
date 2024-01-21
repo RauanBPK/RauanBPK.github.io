@@ -173,13 +173,6 @@ anteriormente para então debugar nossa aplicação.
 
 * <small>A app acaba nem chamando o mongo... mas poderia.</small>
 
-### F no chat: Unit test com _Pytest_
-
-Uma coisa que ainda não consegui fazer é debugar meus testes unitários com pytest utilizando esse workflow.
-Se você souber como, deixe nos comentários :)
-Para rodar meus testes unitários eu inicio uma shell no container e uso o comando `pytest`. Mas, dessa maneira
-os breakpoints presentes nos testes não são ativados.
-
 ### Como estou dirigindo?
 
 Se você tem alguma sugestão, dica, ou encontrou algum erro, pode deixar nos comentários abaixo. (:
