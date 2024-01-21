@@ -3,7 +3,7 @@ layout: post
 title:  "Debugando Python dockerizado no PyCharm"
 author: Rauan
 date:   2024-01-21
-tags: tutorial debug python docker
+tags: debug docker python tutorial
 ---
 
 ### `print()` my beloved
