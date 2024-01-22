@@ -9,13 +9,14 @@ tags: algoritmo python
 ### Nervouser na entrevista
 
 Um tempo atrás, durante a etapa técnica de uma entrevista de emprego, tive que resolver alguns probleminhas em call
-com o supervisor do setor. Coisa simples: árvore binária, palíndromo, etc., porém, já um tanto _nervouser_, 
-me atrapalhei justamente no problema mais fácil, implementar <a href="https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci" target = "_blank">Fibonacci</a>.
+com o supervisor do setor. Problemas clássicos: árvore binária, palíndromo, etc., porém, já um tanto _nervouser_, 
+me atrapalhei justamente no problema mais fácil <small>(rly?)</small>, implementar <a href="https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci" target = "_blank">Fibonacci</a>.
 
 Não lembro exatamente, mas a questão era alguma coisa assim:
 
 `Implemente um programa que escreva a sequência de Fibonacci até um determinado número.`
-* <small> além disso, a lista deveria ser formatada assim -> "0,1,1,2,3,5..."</small>
+
+<small> além disso, a lista deveria ser formatada assim -> "0,1,1,2,3,5..."</small>
 
 Perceba como esse problema é diferente de:
 
@@ -50,7 +51,7 @@ if __name__ == '__main__':
     print(fib(N))
 ```
 
-Percebendo que esse programa calculava e _printava_ o termo N da sequência e não a sequência até o termo N, tentei remendar:
+Percebendo que o programa calculava e _printava_ o termo N da sequência e não a sequência até o termo N, tentei remendar:
 
 ```python
 from functools import lru_cache
@@ -75,8 +76,9 @@ Ok, funciona. Mas...
 
 * Como não sabia até qual termo calcular para chegar no máximo N, usei o próprio N como range, pois `fib(N) >= N`.
 Porém tive que usar uma condicional e um `break` para parar a iteração <small>(q horror)</small>.
-* Só não é totalmente ineficiente, pois o <a href="https://www.google.com/search?q=memoization" target="_blank">`@lru_cache`</a>
+* Só não é totalmente ineficiente pois o <a href="https://www.google.com/search?q=memoization" target="_blank">`@lru_cache`</a>
 está sendo usado para evitar recalcular os termos já calculados na iteração anterior. Mesmo assim, por conta do cache, mais memória é utilizada sem necessidade.
+<small>(para esse problema)</small>
 
 ### Big soluço elegante
 
@@ -101,10 +103,56 @@ O código acima é bem mais simples, elegante e não recalcula valores desnecess
 * A cada loop (`while a < max`), a função retorna (ou gera) um novo componente dessa sequência, utilizando a _keyword_ `yield`
 * A linha _5_ especifica a lógica por trás da sequência de Fibonacci: o próximo número da sequência é a soma dos dois anteriores.
 
+### Um detalhe
+
+Poderia parar por aqui, com essa implementação bonita utilizando yield, mas existe um detalhe interessante:
+
+Nessa implementação, assim como na anterior (desde que use alguma forma de memo/cache) os valores calculados ficam armazenados
+em memória. No caso da implementação recursiva, ficam armazenados no cache da função/decorator _lru_cache_ (que não é acessível diretamente),
+além de armazenados na variável "lista" para posterior formatação.
+
+Esta última implementação, que utiliza yield, também armazena a totalidade dos dados em memória, pois cria uma lista a partir do gerador:
+`list(fib(N))`. Dado que é apenas necessário escrevermos a lista e não armazená-la, o código acima poderia ser ajustado da seguinte forma:
+
+```python
+def fib(max):
+    ...
+
+if __name__ == '__main__':
+    N = 100
+    ger = fib(N)
+    num = next(ger)
+    while True:
+        print(num, end="")
+        try:
+            num = next(ger)
+            print(",", end="")
+        except StopIteration:
+            print()
+            break
+```
+
+Ou, se uma vírgula sobrando no final não for problema...
+
+```python
+def fib(max):
+    ...
+
+if __name__ == '__main__':
+    N = 100
+    ger = fib(N)
+    for number in ger:
+        print(number, end=',')
+```
+
+Ok, agora sim. Escrevemos a sequência de Fibonacci, separada por vírgula, até um número máximo N,
+sem recalcular valores ou armazenar dados desnecessariamente. Ufa. Pena que ficou
+mais feio :(
+
 ### Lições do dia
 
 * Reler a questão é útil
-* Yield é divertido
+* Geradores e _yield_ são divertidos
 
 até maix
 😊

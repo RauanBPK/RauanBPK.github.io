@@ -169,7 +169,7 @@ _mongo_ na aba "Services".
 
 Ok, agora é só rodar (clicando na setinha do lado da barata) essa nova config para subir o mongo + app (ou só mongo), e depois rodar a config que criamos 
 anteriormente para então debugar nossa aplicação. 
-<small style="color: #ddd">Lembre de usar a baratinha</small>
+<small>Lembre de usar a baratinha</small>
 
 * <small>A app acaba nem chamando o mongo... mas poderia.</small>
 
