@@ -1,0 +1,110 @@
+---
+layout: post
+title:  "Fib vs Fib"
+author: Rauan
+date:   2024-01-21
+tags: algoritmo python 
+---
+
+### Nervouser na entrevista
+
+Um tempo atrás, durante a etapa técnica de uma entrevista de emprego, tive que resolver alguns probleminhas em call
+com o supervisor do setor. Coisa simples: árvore binária, palíndromo, etc., porém, já um tanto _nervouser_, 
+me atrapalhei justamente no problema mais fácil, implementar <a href="https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci" target = "_blank">Fibonacci</a>.
+
+Não lembro exatamente, mas a questão era alguma coisa assim:
+
+`Implemente um programa que escreva a sequência de Fibonacci até um determinado número.`
+* <small> além disso, a lista deveria ser formatada assim -> "0,1,1,2,3,5..."</small>
+
+Perceba como esse problema é diferente de:
+
+`Implemente um programa que escreva um determinado termo da sequência de Fibonacci`
+
+O primeiro problema pede uma lista de termos da sequência de Fibonacci até um número máximo N.
+
+O segundo problema pede o valor do termo N da sequência de Fibonacci.
+
+
+### ¿Estás en duda? No se adelante
+
+Ao invés de parar um tempo pra refletir sobre o que o problema pedia, um pouco encabulado de parecer inapto a
+resolver um problema (que eu julgava) trivial, começei a escrever.
+
+Rapidamente implementei algo mais ou menos assim:
+
+```python
+from functools import lru_cache
+
+@lru_cache()
+def fib(nth_fib_number):
+    if nth_fib_number < 1:
+        return None
+    if nth_fib_number in [1, 2]:
+        return 1
+    else:
+        return fib(nth_fib_number-1) + fib(nth_fib_number-2)
+
+if __name__ == '__main__':
+    N = 100
+    print(fib(N))
+```
+
+Percebendo que esse programa calculava e _printava_ o termo N da sequência e não a sequência até o termo N, tentei remendar:
+
+```python
+from functools import lru_cache
+
+@lru_cache()
+def fib(nth_fib_number):
+    ...
+
+if __name__ == '__main__':
+    N = 100
+    lista = []
+    for i in range(1, N):
+        termo = fib(i)
+        if termo > N:
+            break
+        else:
+            lista.append(str(termo))
+    print(','.join(lista))
+```
+
+Ok, funciona. Mas...
+
+* Como não sabia até qual termo calcular para chegar no máximo N, usei o próprio N como range, pois `fib(N) >= N`.
+Porém tive que usar uma condicional e um `break` para parar a iteração <small>(q horror)</small>.
+* Apesar do <a href="https://www.google.com/search?q=memoization" target="_blank">`@lru_cache`</a>, esse código não
+é eficiente pois cada iteração recalcula os termos já calculados na iteração anterior.
+
+### Big soluço elegante
+
+Depois da entrevista, percebendo que a minha solução não era boa o suficiente, decidi buscar como resolver o problema de uma
+maneira mais eficiente. Encontrei o seguinte código:
+
+```python
+1  def fib(max):
+2      a, b = 0, 1
+3      while a < max:
+4          yield str(a)
+5          a, b = b, a + b
+6  
+7  if __name__ == '__main__':
+8      N = 100
+9      print(','.join(list(fib(N))))
+```
+
+O código acima é bem mais simples, elegante e não recalcula valores desnecessariamente. 
+
+* A função `fib` retorna um objeto gerador, e o corpo da função define sua lógica de funcionamento.
+* A cada loop (`while a < max`), a função retorna (ou gera) um novo componente dessa sequência, utilizando a _keyword_ `yield`
+* A linha _5_ especifica a lógica por trás da sequência de Fibonacci: o próximo número da sequência é a soma dos dois anteriores.
+
+### Lições do dia
+
+* Reler a questão é útil
+* Yield é divertido
+
+até maix
+😊
