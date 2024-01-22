@@ -302,6 +302,9 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
+  small {
+    color: #aaa;
+  }
   p {
     text-align: justify;
   }
@@ -363,8 +366,4 @@
 
 .highlight code {
   font-size: medium;
-}
-
-.post-content small {
-  color: #aaa;
 }
