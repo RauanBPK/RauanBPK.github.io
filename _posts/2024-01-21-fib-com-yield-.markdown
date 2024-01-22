@@ -75,8 +75,8 @@ Ok, funciona. Mas...
 
 * Como não sabia até qual termo calcular para chegar no máximo N, usei o próprio N como range, pois `fib(N) >= N`.
 Porém tive que usar uma condicional e um `break` para parar a iteração <small>(q horror)</small>.
-* Apesar do <a href="https://www.google.com/search?q=memoization" target="_blank">`@lru_cache`</a>, esse código não
-é eficiente pois cada iteração recalcula os termos já calculados na iteração anterior.
+* Só não é totalmente ineficiente, pois o <a href="https://www.google.com/search?q=memoization" target="_blank">`@lru_cache`</a>
+está sendo usado para evitar recalcular os termos já calculados na iteração anterior. Mesmo assim, por conta do cache, mais memória é utilizada sem necessidade.
 
 ### Big soluço elegante
 
