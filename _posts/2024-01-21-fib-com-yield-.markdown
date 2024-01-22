@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Fib vs Fib"
+title:  "Fib com yield"
 author: Rauan
 date:   2024-01-21
 tags: algoritmo python 
@@ -84,15 +84,15 @@ Depois da entrevista, percebendo que a minha solução não era boa o suficiente
 maneira mais eficiente. Encontrei o seguinte código:
 
 ```python
-1  def fib(max):
-2      a, b = 0, 1
-3      while a < max:
-4          yield str(a)
-5          a, b = b, a + b
-6  
-7  if __name__ == '__main__':
-8      N = 100
-9      print(','.join(list(fib(N))))
+def fib(max):
+    a, b = 0, 1
+    while a < max:
+        yield str(a)
+        a, b = b, a + b
+
+if __name__ == '__main__':
+    N = 100
+    print(','.join(list(fib(N))))
 ```
 
 O código acima é bem mais simples, elegante e não recalcula valores desnecessariamente. 
