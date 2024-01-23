@@ -176,8 +176,9 @@ anteriormente para então debugar nossa aplicação.
 ### Debugando testes com _Pytest_
 
 Se você precisa debugar seus testes, crie uma nova config de _run/debug_ do tipo
-"Pytest". Escolha o interpretador criado anteriormente (aquele do container), e no campo
-"Additional Arguments" coloque <a href="https://github.com/pytest-dev/pytest-cov/issues/131" target="_blank">`--no-cov`</a>. Pronto, agora pode colocar seus breakpoints nos testes e debugar feliz da vida.
+"Pytest". Escolha o interpretador criado anteriormente (aquele do container), e, se você estiver utilizando `pytest-cov` 
+no seu projeto, no campo "Additional Arguments" coloque <a href="https://github.com/pytest-dev/pytest-cov/issues/131" target="_blank">`--no-cov`</a>.
+Pronto, agora pode colocar seus breakpoints nos testes e debugar feliz da vida.
 
 <img src="/images/pycharm-docker-debug/pytest-debug.png" style="display:block;margin:0 auto">
 
