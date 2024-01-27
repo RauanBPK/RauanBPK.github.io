@@ -25,5 +25,4 @@ Música boa pra programar precisa ter/ser:
 - <a href="https://www.youtube.com/watch?v=9PNV6Lg_ajA" target="_blank">Babalos - Snow Crystal</a><small> - POV: já são 5:30 da manhã e a sprint fecha hoje</small>
 - <a href="https://www.youtube.com/watch?v=ngywWphI7tk" target="_blank">Pendulum - Set Me on Fire </a><small> - POV: _good enough_ feat. git push --force</small>
 
-### Quais são as suas?
-<small> até parece q alguém vai comentar aq ;-;</small>
+🎵 🎶 🎵 🎶
