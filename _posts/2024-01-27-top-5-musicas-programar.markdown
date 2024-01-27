@@ -8,8 +8,8 @@ tags: misc
 
 ### Boa para fazer programa
 
-Música boa pra programar precisa ter/ser:
-- Instrumental - (Vozes já chegam às da minha cabeça)
+Música boa pra programar precisa ser:
+- Instrumental - (Vozes já chegam as da minha cabeça)
 - Repetitiva - (Meu foco só vem na hipnose)
 - _a e s t h e t i c_ - (d33p, lo-fi, H4x0r, cyb3rpunk feelings)
 
